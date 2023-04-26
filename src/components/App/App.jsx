@@ -4,7 +4,6 @@ import { nanoid } from 'nanoid';
 import { ContactForm } from '../ContactForm/ContactForm';
 import { Filter } from '../Filter/Filter';
 import { ContactList } from '../ContactList/ContactList';
-import { ContactItem } from '../ContactItem/ContactItem';
 import { Header, Title } from './App.styled';
 
 export const App = () => {
@@ -70,12 +69,10 @@ export const App = () => {
       <ContactForm onSubmit={handleSubmitForm} />
       <Title>Contacts</Title>
       <Filter value={filter} onChange={changeFilter} />
-      <ContactList>
-        <ContactItem
-          visibleContacts={visibleContacts}
-          onDeleteContact={handleDeleteContact}
-        />
-      </ContactList>
+      <ContactList
+        visibleContacts={visibleContacts}
+        onDeleteContact={handleDeleteContact}
+      />
     </div>
   );
 };
